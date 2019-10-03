@@ -1,7 +1,33 @@
-<div class="youtube-thumbnail video-thumbnail {{ range .Params }}{{ . }} {{ end }}">
-  <a href="#" class="video-link" data-modal="modal-{{ .Get 0 }}" data-target="video-{{ .Get 0 }}" data-ytid="{{ .Get 0 }}" role="button">
-      <img src="https://img.youtube.com/vi/{{ .Get 0 }}/maxresdefault.jpg"/>
-      {{ partial "icons/play-circle-regular" . }}
+<div
+  class="vimeo-thumbnail video-thumbnail {{ range.Params }}{{ . }} {{ end }}"
+>
+<script>
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'http://vimeo.com/api/oembed.json?url=https://vimeo.com/{{ .Get 0 }}');
+  {{/*  xhr.setRequestHeader('Content-Type', 'application/json');  */}}
+  xhr.onload = function() {
+      if (xhr.status === 200) {
+        var img = document.getElementById('thumb-{{ .Get 0 }}');
+        var response = JSON.parse(xhr.responseText);
+        console.log(response.thumbnail_url);
+        img.src = response.thumbnail_url;
+      }
+      else {
+          alert('Request failed.  Returned status of ' + xhr.status);
+      }
+  };
+  xhr.send();
+</script>
+  <a
+    href="#"
+    class="vimeo-link"
+    data-modal="modal-{{ .Get 0 }}"
+    data-target="video-{{ .Get 0 }}"
+    data-vimeoid="{{ .Get 0 }}"
+    role="button"
+  >
+    <img id="thumb-{{ .Get 0 }}" src="images/spacer.svg"/>
+    {{ partial "icons/play-circle-regular" . }}
   </a>
-  {{ partial "components/youtube-modal" . }}
+  {{ partial "components/vimeo-modal" . }}
 </div>

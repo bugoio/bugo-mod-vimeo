@@ -55,7 +55,7 @@ $container-max-widths: (
  *
  **/
 
-.video-modal {
+.vimeo-modal {
   display: none;
   position: fixed;
   top: 0;
@@ -74,7 +74,7 @@ $container-max-widths: (
 
   // * Video Window
 
-  .video-window {
+  .vimeo-window {
     position: absolute;
     top: 50vh;
     left: 50vw;
@@ -109,12 +109,12 @@ $container-max-widths: (
  * * image fills the space using object-fit: cover
  **/
 
-.youtube-thumbnail {
+.vimeo-thumbnail {
   @include ms-respond(margin-top,2);
   @include ms-respond(margin-bottom,2);
 }
 
-.video-link {
+.vimeo-link {
   display: block;
   padding-bottom: 52.6%;
   position: relative;
