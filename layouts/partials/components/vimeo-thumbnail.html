@@ -3,7 +3,7 @@
 >
 <script>
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://vimeo.com/api/oembed.json?url=https://vimeo.com/{{ .id }}');
+  xhr.open('GET', 'https://vimeo.com/api/oembed.json?url=https://vimeo.com/{{ .id }}');
   xhr.onload = function() {
       if (xhr.status === 200) {
         var img = document.getElementById('thumb-{{ .id }}');
