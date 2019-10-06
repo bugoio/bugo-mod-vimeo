@@ -1,116 +1,9 @@
-/**
- *
- * Theme Color Variables
- * Assigns global colors variables for use elsewhere.
- *
- **/
-
-$primary:       {{ .Site.Params.theme_colors.primary | default "#AC5E0D" }};
-$secondary:     {{ .Site.Params.theme_colors.secondary | default "#536F48" }};
-$accent-1:      {{ .Site.Params.theme_colors.accent_1 | default "#FFDE2F" }};
-$accent-2:      {{ .Site.Params.theme_colors.accent_2 | default "#5F336A" }};
-$light:         {{ .Site.Params.theme_colors.light | default "#FFF5E7" }};
-$dark:          {{ .Site.Params.theme_colors.dark | default "#5B5551" }};
-$white:         {{ .Site.Params.theme_colors.white | default "#FFFCF6" }};
-$black:         {{ .Site.Params.theme_colors.black | default "#252524" }};
-$success:       {{ .Site.Params.theme_colors.success | default "#28a745" }};
-$info:          {{ .Site.Params.theme_colors.info | default "#17a2b8" }};
-$warning:       {{ .Site.Params.theme_colors.warning | default "#ffc107" }};
-$danger:        {{ .Site.Params.theme_colors.danger | default "#dc3545" }};
-
-$breakpoints: (
-    xs: {{ .Site.Params.breakpoints.xs.bp | default "0" }},
-    sm: {{ .Site.Params.breakpoints.sm.bp | default "576px" }},
-    md: {{ .Site.Params.breakpoints.md.bp | default "768px" }},
-    lg: {{ .Site.Params.breakpoints.lg.bp | default "992px" }},
-    xl: {{ .Site.Params.breakpoints.xl.bp | default "1200px" }},
-    xxl: {{ .Site.Params.breakpoints.xxl.bp | default "1400px" }},
-    xxxl: {{ .Site.Params.breakpoints.xxxl.bp | default "2200px" }}
-) !default;
-
-$container-max-widths: (
-    xs: {{ .Site.Params.breakpoints.xs.mw | default "none" }},
-    sm: {{ .Site.Params.breakpoints.sm.mw | default "576px" }},
-    md: {{ .Site.Params.breakpoints.md.mw | default "768px" }},
-    lg: {{ .Site.Params.breakpoints.lg.mw | default "992px" }},
-    xl: {{ .Site.Params.breakpoints.xl.mw | default "1200px" }},
-    xxl: {{ .Site.Params.breakpoints.xxl.mw | default "1400px" }},
-    xxxl: {{ .Site.Params.breakpoints.xxxl.mw | default "2200px" }}
-) !default;
-
-
-/**
- * Global Variabls
- * TODO: move all globals here
- **/
-
-/**
- * Global Spacing
- **/
-
- $global-margin:   2 !default; // false | modular scale ratio
- $global-padding:  2 !default;  // false | modular scale ratio
-
- /**
-  * Global Color
-  **/
-
- // * Light Mode
- $global-font-color:             $dark !default;
- $global-background-color:       $light !default;
- $global-link-color:             $primary !default;
- $global-link-color-dark:        $accent-1 !default;
- $global-link-focus:             lighten( $global-link-color, 20% ) !default;
- $global-menu-bg:                $light !default;
-
- // * Dark Mode
- $global-font-color-dark:             $global-font-color !default;
- $global-background-color-dark:       $global-background-color !default;
- $global-link-color-dark:             $global-link-color !default;
- $global-link-focus-dark:             $global-link-focus !default;
- $global-menu-bg-dark:                $global-menu-bg !default;
-
- /**
-  * Global Typography
-  **/
-
- $global-font:               var( --font-family-global ) !default; // grab the font family from the forestry output
- $global-font-size:          0 !default; // modular scale
- $global-small:              $global-font-size - 1 !default;
- $global-small-line-height:  1.2 !default;
- $global-line-height:        1.75 !default;
- $global-link-weight:        normal !default;
-
-/**
-  * Global Effects
-  **/
-
-  $global-radius:   2px !default; // false | modular scale ratio
-  $global-shadow:   1px 1px 2px transparentize($dark,0.2) !default;
-
-  /**
-  * Global Options
-  **/
-
-$dark-mode: false; // enables dark mode variables
-
-
-
-@import "vendors/mathsass/math";
-@import "vendors/modularscale/modularscale";
-
-@import "functions";
-@import "mixins";
-@import "helpers";
-
 @import "bugo-vimeo-variables";
 
-
 /**
- * Video Modal
- * * Initial state is closed.
- *
- **/
+  * VIDEO MODAL
+  * * Initial state is closed.
+  **/
 
 .vimeo-modal {
   display: none;
@@ -160,11 +53,10 @@ $dark-mode: false; // enables dark mode variables
 
 
 /**
- * Video Link
- *
- * * padding-bottom determines ratio of the thumbnail
- * * image fills the space using object-fit: cover
- **/
+  * VIDEO LINK
+  * * padding-bottom determines ratio of the thumbnail
+  * * image fills the space using object-fit: cover
+  **/
 
 .vimeo-thumbnail {
   @include ms-respond(margin-top,2);
