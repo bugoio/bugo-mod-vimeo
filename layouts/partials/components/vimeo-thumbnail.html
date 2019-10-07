@@ -26,7 +26,7 @@
     role="button"
   >
     <img id="thumb-{{ .id }}" src="images/spacer.svg"/>
-    {{ partial "icons/play-circle-regular" . }}
+    {{ partial "icon" (slice "play-circle-regular") }}
   </a>
   {{ partial "components/vimeo-modal" . }}
 </div>
