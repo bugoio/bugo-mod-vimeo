@@ -1,4 +1,16 @@
-@import "bugo-vimeo-variables";
+/**
+ * BUGO VIMEO
+ *
+ * * note
+ * TODO: something
+ * ! Deprecate
+ * ? Question
+ * @param myParam
+ **/
+
+ @import "bugo-vimeo-variables";
+@debug "Loading Bugo Messages Module SASS";
+@import "custom-variables";
 
 /**
   * VIDEO MODAL
