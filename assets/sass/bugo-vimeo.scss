@@ -75,8 +75,10 @@
   @include ms-respond(margin-bottom,2);
 }
 
-.vimeo-link {
+.vimeo-link,
+.vimeo-button {
   display: block;
+  width: 100%;
   padding-bottom: 52.6%;
   position: relative;
   color: $white;
@@ -103,5 +105,52 @@
     z-index: 100;
     width: 20%;
     height: 20%;
+  }
+}
+
+.video-button {
+  background-color: transparent;
+
+  &:focus {
+    outline: 1px solid $primary;
+    @include ms-respond(outline-offset,0);
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  background-color: transparentize($black, 0.2);
+
+  &:focus {
+    .window {
+      outline: 1px solid $primary;
+      @include ms-respond(outline-offset,0);
+    }
+  }
+
+  .window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: white;
+    width: auto;
+    height: 360px;
+
+    header button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translateX(100%) translateY(-100%);
+    }
+
+    iframe {
+      width: 640px;
+      height: 360px;
+    }
   }
 }
