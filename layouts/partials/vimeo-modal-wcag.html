@@ -1,0 +1,16 @@
+<div role="dialog"
+  id="vimeo-modal-{{ .id }}"
+  class="hidden modal vimeo-modal"
+  tabindex="0"
+  aria-labelledby="vimeo-label-{{ .id }}"
+  aria-describedby="vimeo-desc-{{ .id }}"
+ >
+  <div class="window vimeo-window" role="document">
+    <header role="banner">
+      <button aria-label="Close Dialog">X</button>
+      <h2 id="vimeo-label-{{ .id }}" class="sr-only"></h2>
+    </header>
+    <div id="vimeo-desc-{{ .id }}" class="summary sr-only"></div>
+  </div>
+  <div class="window-mask vimeo-mask"></div>
+</div>

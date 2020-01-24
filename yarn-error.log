@@ -1,0 +1,42 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js install webpack
+
+PATH: 
+  C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Python27\;C:\Python27\Scripts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Common Files\Acronis\VirtualFile\;C:\Program Files (x86)\Common Files\Acronis\VirtualFile64\;C:\Program Files (x86)\Common Files\Acronis\SnapAPI\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Go\bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Yarn\bin\;C:\Users\matta\AppData\Roaming\Python\Scripts;C:\Users\matta\.windows-build-tools\python27\;C:\Users\matta\.windows-build-tools\python27\;C:\Users\matta\.windows-build-tools\python27\;C:\Users\matta\scoop\shims;C:\Users\matta\AppData\Local\Microsoft\WindowsApps;;C:\Users\matta\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\matta\AppData\Roaming\npm;C:\Users\matta\go\bin;C:\Users\matta\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  10.16.3
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: C:\Users\matta\temp-drop\personal\Bugo\bugo-mod-vimeo\package.json: Unexpected string in JSON at position 282
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:304:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "bugo-mod-vimeo",
+    "version": "1.0.0",
+    "description": "Add Vimeo thumbnails and modal windows to your site.",
+    "main": "gulp.js",
+    "repository": "https://github.com/bugoio/bugo-mod-vimeo.git",
+    "author": "Matt Antone <matt.antone@gmail.com>",
+    "license": "MIT"
+    "scripts": {
+      "start": "webpack --mode development",
+    },
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

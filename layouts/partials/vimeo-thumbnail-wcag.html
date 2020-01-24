@@ -1,0 +1,13 @@
+<div
+  id="vimeo-{{ .id }}"
+  class="vimeo-thumbnail video-thumbnail"
+  data-vimeoid="{{ .id }}"
+>
+  <button
+    class="video-button vimeo-button"
+  >
+    <img id="thumb-{{ .id }}" src="images/spacer.svg" alt="" role="presentation"/>
+    {{ partial "icon" (slice "play-circle-regular") }}
+  </button>
+  {{ partial "vimeo-modal-wcag" . }}
+</div>
