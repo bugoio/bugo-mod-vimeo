@@ -22,10 +22,10 @@ export default class BugoVimeoThumb {
     this.thumbnail = this.button.querySelector('img');
     this.modal = container.querySelector('.vimeo-modal');
     this.closeButton = this.modal.querySelector('button');
-    this.window = this.modal.querySelector('.window');
+    this.videoWindow = this.modal.querySelector('.window');
     this.header = this.modal.querySelector('h2');
     this.summary = this.modal.querySelector('.summary');
-    this.iframe = this.window.querySelector('.vimeo-player');
+    this.iframe = this.videoWindow.querySelector('.vimeo-player');
     this.videoUrl = container.getAttribute('data-vimeoid');
     this.player = false;
 
@@ -35,7 +35,7 @@ export default class BugoVimeoThumb {
       startTime: 0,
     });
 
-    console.log(this);
+    // console.log(this);
 
     this.modal.addEventListener('keydown', this.handleKeydown.bind(this));
 
@@ -99,23 +99,27 @@ export default class BugoVimeoThumb {
   }
 
   initVideo(id){
+    console.log(this)
     if (this.video.isValid()) {
       // retrieve iframe/video dom element.
       this.video.getVideo((video) => {
           const $parent = video.parentNode;
+          console.log(this.videoWindow)
 
-          // insert video in the body.
-          this.window.prepend (video);
-
+          // insert video in the body.  
+          $(this.videoWindow).append(video);
+          console.log($,jQuery)
           // remove temporary parent video element (created by VideoWorker).
           $parent.parentNode.removeChild($parent);
           this.video.getMeta((meta) => {
             console.log(meta);
             this.thumbnail.src = meta.videoImage;
-            this.header.append(meta.title);
-            this.summary.append(meta.description);
+
+            $(this.header).append(meta.title);
+            $(this.summary).append(meta.description);
+            
             this.button.setAttribute('aria-label',"Play "+meta.title);
-            this.player = this.window.querySelector('iframe');
+            this.player = this.videoWindow.querySelector('iframe');
             this.player.setAttribute('role','presentation');
             this.initPlayer();
           });
