@@ -14,7 +14,9 @@
     "@babel/polyfill": "^7.7.0",
     "@babel/preset-env": "^7.7.4",
     "@babel/register": "^7.7.4",
+    "acorn": "^7.1.1",
     "babel-loader": "^8.0.6",
+    "minimist": "^1.2.5",
     "video-worker": "^1.1.6"
   },
   "devDependencies": {
